@@ -1,0 +1,33 @@
+game {
+  .game {
+    display: grid;
+    place-items: center;
+    width: 478px;
+    height: 535px;
+    margin: 50px auto;
+    border-radius: 12px;
+    background: white;
+    &--board {
+      display: grid;
+      grid-template-columns: repeat(5, auto);
+      grid-template-rows: repeat(6, auto);
+      &__card {
+        border-radius: 4px;
+        width: 60px;
+        margin: 8px;
+        height: 60px;
+        background: linear-gradient(180deg, #f0f0f0 0%, #c2c3c7 100%);
+        border: 2px solid rgba(194, 195, 199, 1);
+        box-shadow: -7px 1px 10px 2px rgba(0, 0, 0, 0.25);
+      }
+    }
+    &--date {
+      display: flex;
+      gap: 100px;
+      h3 {
+        font-size: 22px;
+        font-weight: 400;
+      }
+    }
+  }
+}
