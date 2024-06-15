@@ -1,5 +1,5 @@
 import React from "react";
-import "./Tile.css";
+import "../../Tile/Tile.css";
 
 interface TileProps {
   index: number;
