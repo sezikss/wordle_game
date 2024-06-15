@@ -1,2 +1,2 @@
-export * from './ComponentA';
-export * from './ComponentB';
+export * from './ComponentA/Tile';
+// export * from './ComponentB';
