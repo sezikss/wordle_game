@@ -1,20 +1,27 @@
 import { useEffect, useState } from "react";
-const API_URL = 'URL_TO_FETCH';
+
+const API_URL = 'https://piccolo-server.vercel.app/words';
+
+
+interface FetchData {
+  success: boolean;
+  data: string[];
+}
 
 const useFetch = () => {
-  const [data, setData] = useState<unknown>(null);
+  const [data, setData] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const fetchData = async () => {
     setIsLoading(true);
     try {
       const response = await fetch(API_URL);
-      const data = await response.json();
-      if (data.success) {
-        setData(data.data);
+      const result: FetchData = await response.json();
+      if (result.success) {
+        setData(result.data);
       }
     } catch (error) {
-      console.error('Error fetching data:', error);
+      console.error('Ошибка при получении данных:', error);
     } finally {
       setIsLoading(false);
     }
@@ -24,6 +31,8 @@ const useFetch = () => {
     fetchData();
   }, []);
 
+  // console.log(data);
+  
   return {
     isLoading,
     data,

@@ -1,9 +1,7 @@
 import React from "react";
-
-
-import "./WordG.css";
-import { Tile } from "../components/ComponentA/Tile";
+import { Tile } from "../components";
 import { useWordle } from "../hooks/useWordle";
+import "./WordG.css";
 
 const WordG = () => {
   const {
@@ -16,7 +14,7 @@ const WordG = () => {
     getTileClass,
     initializeGame,
   } = useWordle();
-  console.log(word);
+  // console.log(word);
 
   return (
     <div className="word-container">
@@ -30,9 +28,9 @@ const WordG = () => {
                 const index = row * 5 + col;
                 const inputValue = guesses[row][col] || "";
                 const tileClass =
-                  currentIndex > row ? getTileClass(inputValue, col) : "";
+                  currentIndex > row ?  `${getTileClass (inputValue, col, row)} ` : "";
                 return (
-                  <Tile
+                  <Tile 
                     key={index}
                     index={index}
                     inputValue={inputValue}
