@@ -8,6 +8,7 @@ interface TileProps {
 }
 
 export const Tile: React.FC<TileProps> = ({ index, inputValue, tileClass }) => {
+  // console.log(tileClass);
   return (
     <div className={` square ${tileClass}` } key={index}>
       <input
